@@ -55,6 +55,7 @@ void change(int);
         // set up a rare case where all exports cease for a certain country due to 
         //shortages and the list of exports get 
         // added to the domestic products sold only 
+    // dummy parameters go into teh function to make sure the functin call works
 void change(int a)
 {
     cout<<endl; 
