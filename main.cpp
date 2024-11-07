@@ -1,6 +1,7 @@
 // include all the headers to be used, map, list, array, iostream, fstream 
 #include<iostream>
 #include<map>
+using namespace std;
 //include the other as well
 
 // function declration to be called when handling time based events of what is being imported, 
@@ -13,8 +14,11 @@ void change(int);
     int main() 
     {
         //basic map
-        map<string, int>Map; 
-    }
+        // initilize by not readin file but by placing our own values
+        map <string, int>Map;  
+        Map["Peru"] = 15;
+        Map["Mexico"] = 10; 
+
 
     //open the file and include an error message if it fails to open
 
@@ -27,11 +31,20 @@ void change(int);
 
     //run a simulation 25 times and go through every country 
         // call the function we declared earlier
+        for(auto e : Map)
+        {
+            int val = e.second; 
+            change(val); 
+        }
+        //test loop to iterate thorough the small map we have and call the function for every value in the 
+        // map 
         //in the fucntion we run the probability of what new item they either import, exported, or sold 
         // domestically
         // the item is chosen at random and addded to the appropriate list 
 
     // return 0 to end the main function
+    return 0; 
+    }
 
 // the function is written out here
 
@@ -42,3 +55,8 @@ void change(int);
         // set up a rare case where all exports cease for a certain country due to 
         //shortages and the list of exports get 
         // added to the domestic products sold only 
+void change(int a)
+{
+    cout<<endl; 
+    cout<<a<<endl; 
+}
