@@ -1,11 +1,20 @@
 // include all the headers to be used, map, list, array, iostream, fstream 
+#include<iostream>
+#include<map>
+//include the other as well
 
 // function declration to be called when handling time based events of what is being imported, 
 // exported and what is being produced and sold domestically
+void change(int); 
 
 //main function begins here
     // declare a map with a country as the key and the values are an array of 3 lists, imports, exports and 
     // domestically sold products
+    int main() 
+    {
+        //basic map
+        map<string, int>Map; 
+    }
 
     //open the file and include an error message if it fails to open
 
@@ -28,5 +37,8 @@
 
     // use a for loop to run through the suimulation 25 times
         //use srand time to keep getting a new int 
-        //set up probability of an event happening, based on that determine whether an
-        
+        //set up probability of an event happening, based on that determine whether a new import 
+        // export or domestic product has been added
+        // set up a rare case where all exports cease for a certain country due to 
+        //shortages and the list of exports get 
+        // added to the domestic products sold only 
