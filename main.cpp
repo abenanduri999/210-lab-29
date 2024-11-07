@@ -11,4 +11,9 @@
 
     //read country names and some list of items that are traded into the map, and the items into the lists
 
-    
+    // close the file
+
+    //Im using a second file of items, that are not included in the original file 
+    //open the file and copy the elements into an array
+
+    //run a simulation 25 times and go through every country 
