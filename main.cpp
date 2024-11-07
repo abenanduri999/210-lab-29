@@ -17,3 +17,16 @@
     //open the file and copy the elements into an array
 
     //run a simulation 25 times and go through every country 
+        // call the function we declared earlier
+        //in the fucntion we run the probability of what new item they either import, exported, or sold 
+        // domestically
+        // the item is chosen at random and addded to the appropriate list 
+
+    // return 0 to end the main function
+
+// the function is written out here
+
+    // use a for loop to run through the suimulation 25 times
+        //use srand time to keep getting a new int 
+        //set up probability of an event happening, based on that determine whether an
+        
