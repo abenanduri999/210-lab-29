@@ -1,0 +1,90 @@
+Wheat
+Corn
+Rice
+Soybeans
+Coffee
+Cocoa
+Sugar
+Tea
+Platinum
+Copper
+Aluminum
+Iron ore
+Coal
+Natural gas
+Crude oil
+Diamonds
+Zinc
+Cotton
+Bananas
+Apples
+Oranges
+Grapes
+Pineapples
+Potatoes
+Tomatoes
+Onions
+Lettuce
+Peppers
+Carrots
+Peas
+Beans
+Avocados
+Mangoes
+Coconuts
+Cherries
+Pears
+Peaches
+Melons
+Strawberries
+Beef
+Pork
+Chicken
+Nuclear fuel
+Solar panels
+Wind turbines
+Hydrogen
+Machinery
+Electrical machinery
+Lamb
+Fish
+Shrimp
+Lobster
+Crabs
+Milk
+Butter
+Cheese
+Eggs
+Honey
+Wool
+Leather
+Silk
+Fish meal
+Gelatin
+Animal feed
+Livestock
+Gold
+Silver
+Nickel
+Lead
+Tin
+Lithium
+Cobalt
+Manganese
+Uranium
+Steel
+Ferroalloys
+Bauxite
+Rare earth metals
+Graphite
+Salt
+Potash
+Petroleum products
+Gasoline
+Diesel
+Jet fuel
+Propane
+Natural gas liquids
+Coal tar
+Ethanol
+Biodiesel
