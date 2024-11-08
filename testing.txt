@@ -1,0 +1,97 @@
+
+
+
+To test the program so far, I have two files that I am reading from with minimal values to see if everything is infact being read into the 
+lists, and that the strings of the products that I have listed out are being inputted in order they show up on the text file I have included
+in my program. 
+At first I have coded the program in the main fucntion to keep everything consolidated and everthing was running as supposed to. At first I have added two functions. 
+One to populate the map, where I send the empty map I created by referece so the changes done it by the function change the map function main. It will populate with data 
+being read into by two text files, one with 3 countries names and the second text file with 3 products for each country. One should go into the first list in the array, one the 
+second list of the array, and the third in the last. I will add more items to the products list to make sure that they keep populating the list as they are supposed to. 
+Then to display I will use a for range based for loop to iterate through the map using the key, and with the key I will have a nest range based for loop that iterates through the array 
+and print all the items in the list. 
+I used a function to determine if a product is going to be added or removed, to test that the funciton is revceiving the map correctly and is working, 
+i passed the map by reference and simply just removed the last element of each list for all countries. and displayed the results. 
+it worked. 
+
+to populate with one item each my code is as such: 
+  void populate(map<string, list<string>[3]>& countdt)
+{
+     ifstream input1("countries.txt"); 
+        ifstream input2("products1.txt");
+        string country; 
+        string product; 
+
+     
+        for(int i = 0; i < 3; i++)
+        {
+            while(getline(input1, country))
+            {
+                countdt[country]; 
+            }
+        }
+        input1.close(); 
+
+       for(auto e : countdt)
+       {
+           
+           for(int j = 0; j < 3; j++)
+             { 
+                getline(input2, product);
+                countdt[e.first][j].push_back(product);    
+            }
+
+       }
+        input2.close(); 
+}
+
+to display the content the code is as follows: 
+  void display(map<string, list<string>[3]> cdmap)
+{
+    for(auto e : cdmap)
+    {
+        cout<<e.first<<endl; 
+        
+        cout<<"\tImports:"<<endl;
+        for(string import : e.second[0])
+        {
+            cout<<"\t\t"<<import<<" "; 
+        }
+        cout<<endl; 
+
+        cout<<"\tExports:"<<endl;
+        for(string exp : e.second[1])
+        {
+            cout<<"\t\t"<<exp<<" "; 
+        }
+        cout<<endl;
+        
+        cout<<"\tDomestic Products:"<<endl; 
+        for(string dom : e.second[2])
+        {
+            cout<<"\t\t"<<dom<<" "; 
+        }
+        cout<<endl; 
+    }
+}
+
+Test Run on the trade function: 
+
+void trade(map<string, list<string>[T_COUNT]>& counttrad)
+{
+    srand(time(0)); 
+
+    for (auto e : counttrad) 
+    {
+       /* int prob = rand() % 100 + 1;
+        if (prob < 20)
+        {
+
+        } */
+       counttrad[e.first][0].pop_back(); 
+       counttrad[e.first][1].pop_back();
+       counttrad[e.first][2].pop_back();
+    }    
+    
+}
+

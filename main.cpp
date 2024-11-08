@@ -25,13 +25,15 @@ void trade(map<string, list<string>[T_COUNT]>&);
     display(countryData); 
     cout<<endl; 
     trade(countryData); 
+    cout<<endl; 
+    display(countryData); 
         
     return 0; 
     }
 
 void populate(map<string, list<string>[T_COUNT]>& countdt)
 {
-     ifstream input1("countries.txt"); 
+        ifstream input1("countries.txt"); 
         ifstream input2("products1.txt");
         string country; 
         string product; 
@@ -97,11 +99,19 @@ void trade(map<string, list<string>[T_COUNT]>& counttrad)
 {
     vector<string>newprod; 
 
-    fstream input3("products3.txt");
+    fstream input3("products2.txt");
     string newp; 
     while(input3>>newp)
     {
         newprod.push_back(newp); 
+    }
+    input3.close(); 
+
+    int size = newprod.size(); 
+
+    for(int i = 0; i < size; i++)
+    {
+        cout<<newprod[i]<<" "; 
     }
 
     srand(time(0)); 
@@ -126,21 +136,23 @@ void trade(map<string, list<string>[T_COUNT]>& counttrad)
             e.second[2].pop_back();
         } 
         prob = rand() % 100 + 1;
+        int newp = rand() % size + 1; 
         if(prob <= 50)
         {
-            int newp = rand() % newprod.size() + 1; 
+            
             e.second[0].push_back(newprod[newp]); 
         }
          prob = rand() % 100 + 1;
+         
         if(prob <= 60)
         {
-            int newp = rand() % newprod.size() + 1; 
+            
             e.second[1].push_back(newprod[newp]); 
         }
         prob = rand() % 100 + 1;
         if(prob <= 70)
         {
-            int newp = rand() % newprod.size() + 1; 
+             
             e.second[2].push_back(newprod[newp]); 
         }
         prob = rand() % 100 + 1;
@@ -152,9 +164,12 @@ void trade(map<string, list<string>[T_COUNT]>& counttrad)
                 temp.push_back(t); 
             }
             e.second[0].clear(); 
+            for(int i = 0; i < temp.size(); i++)
+            {
+                e.second[2].push_back(temp[i]);
+            }
         }
 
-        display(counttrad); 
     }
     
 }

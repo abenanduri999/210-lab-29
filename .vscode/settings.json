@@ -3,6 +3,7 @@
         "iostream": "cpp",
         "utility": "cpp",
         "map": "cpp",
-        "list": "cpp"
+        "list": "cpp",
+        "ostream": "cpp"
     }
 }
