@@ -9,13 +9,15 @@
 
 using namespace std;
 const int NUM_COUNT = 5;
+const int T_COUNT = 3; 
 
-void populate(map<string, list<string>[3]>&); 
-void display(map<string, list<string>[3]>);
+void populate(map<string, list<string>[T_COUNT]>&); 
+void display(map<string, list<string>[T_COUNT]>);\
+void trade(map<string, list<string>[T_COUNT]>&);
 
     int main() 
     {
-        map<string, list<string>[3]> countryData;  
+        map<string, list<string>[T_COUNT]> countryData;  
 
     populate(countryData);    
     cout<<endl; 
@@ -49,7 +51,7 @@ void display(map<string, list<string>[3]>);
         //shortages and the list of exports get 
         // added to the domestic products sold only 
     // dummy parameters go into teh function to make sure the functin call works
-void populate(map<string, list<string>[3]>& countdt)
+void populate(map<string, list<string>[T_COUNT]>& countdt)
 {
      ifstream input1("countries.txt"); 
         ifstream input2("products1.txt");
@@ -81,7 +83,7 @@ void populate(map<string, list<string>[3]>& countdt)
        }
         input2.close(); 
 }
-void display(map<string, list<string>[3]> cdmap)
+void display(map<string, list<string>[T_COUNT]> cdmap)
 {
     for(auto e : cdmap)
     {
