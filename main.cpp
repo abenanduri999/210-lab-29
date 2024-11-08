@@ -4,6 +4,7 @@
 #include<list>
 #include<array>
 #include<string> 
+#include<fstream>
 
 using namespace std;
 //include the other as well
@@ -18,11 +19,11 @@ using namespace std;
     int main() 
     {
 
-        //basic map
+        
         // initilize by not readin file but by placing our own values
-        map <string, int>Map;  
-        Map["Peru"] = 15;
-        Map["Mexico"] = 10; 
+        map<string, list<string>[]> countryData;  
+        
+
 
 
     //open the file and include an error message if it fails to open
@@ -36,10 +37,9 @@ using namespace std;
 
     //run a simulation 25 times and go through every country 
         // call the function we declared earlier
-        for(auto e : Map)
+        for(auto e : countryData)
         {
-            int val = e.second; 
-            change(val); 
+            ; 
         }
         //test loop to iterate thorough the small map we have and call the function for every value in the 
         // map 
@@ -61,8 +61,3 @@ using namespace std;
         //shortages and the list of exports get 
         // added to the domestic products sold only 
     // dummy parameters go into teh function to make sure the functin call works
-void change(int a)
-{
-    cout<<endl; 
-    cout<<a<<endl; 
-}
