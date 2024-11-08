@@ -6,7 +6,9 @@
 #include<string> 
 #include<fstream>
 
+
 using namespace std;
+const int NUM_COUNT = 10;
 //include the other as well
 
 // function declration to be called when handling time based events of what is being imported, 
@@ -23,14 +25,23 @@ using namespace std;
         // initilize by not readin file but by placing our own values
         map<string, list<string>[]> countryData;  
         ifstream input1("countries.txt"); 
+        ifstream input2("products1");
         string country; 
+        string product; 
 
      
-        for(int i = 0; i < 2; i++)
+        for(int i = 0; i < 3; i++)
         {
-            while(input1 >> countryData[++i])
+            while(getline(input1, country))
+            {
+                countryData[country]; 
+            }
         }
 
+        for(auto e : countryData)
+        {
+            cout<<e.first<<endl; 
+        }
 
 
     //open the file and include an error message if it fails to open
@@ -44,10 +55,7 @@ using namespace std;
 
     //run a simulation 25 times and go through every country 
         // call the function we declared earlier
-        for(auto e : countryData)
-        {
-            ; 
-        }
+       
         //test loop to iterate thorough the small map we have and call the function for every value in the 
         // map 
         //in the fucntion we run the probability of what new item they either import, exported, or sold 
