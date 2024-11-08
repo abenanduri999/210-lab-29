@@ -52,7 +52,19 @@ const int NUM_COUNT = 10;
             cout<<"\t"<<import<<endl; 
         }
 
-        cout<<"\tExports:"
+        cout<<"\tExports:"<<endl; 
+
+        for(string export : e.second[1])
+        {
+            cout<<"\t"<<export<<endl; 
+        }
+
+        cout<<"\tDomestic Products:"<<endl; 
+        
+        for(string dom : e.second[2])
+        {
+            cout<<"\t"<<dom<<endl; 
+        }
     }
        
 
