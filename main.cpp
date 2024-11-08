@@ -22,6 +22,9 @@ void trade(map<string, list<string>[T_COUNT]>&);
     populate(countryData);    
     cout<<endl; 
     display(countryData); 
+    cout<<endl; 
+    trade(countryData); 
+    display(countryData); 
        
 
 
@@ -121,7 +124,14 @@ void trade(map<string, list<string>[T_COUNT]>& counttrad)
 
     for (auto e : counttrad) 
     {
-        int prob = rand() % 100 + 1;
-        if (prob <= ) 
+       /* int prob = rand() % 100 + 1;
+        if (prob < 20)
+        {
+
+        } */
+       counttrad[e.first][0].pop_back(); 
+       counttrad[e.first][1].pop_back();
+       counttrad[e.first][2].pop_back();
     }    
+    
 }
