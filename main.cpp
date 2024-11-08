@@ -1,18 +1,23 @@
 // include all the headers to be used, map, list, array, iostream, fstream 
 #include<iostream>
 #include<map>
+#include<list>
+#include<array>
+#include<string> 
+
 using namespace std;
 //include the other as well
 
 // function declration to be called when handling time based events of what is being imported, 
 // exported and what is being produced and sold domestically
-void change(int); 
+//void change(int); 
 
 //main function begins here
     // declare a map with a country as the key and the values are an array of 3 lists, imports, exports and 
     // domestically sold products
     int main() 
     {
+
         //basic map
         // initilize by not readin file but by placing our own values
         map <string, int>Map;  
