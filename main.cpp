@@ -1,63 +1,175 @@
-// include all the headers to be used, map, list, array, iostream, fstream 
+
 #include<iostream>
 #include<map>
+#include<list>
+#include<array>
+#include<string> 
+#include<fstream>
+#include<vector> 
+
+
 using namespace std;
-//include the other as well
+const int NUM_COUNT = 5;
+const int T_COUNT = 3; 
 
-// function declration to be called when handling time based events of what is being imported, 
-// exported and what is being produced and sold domestically
-void change(int); 
+void populate(map<string, list<string>[T_COUNT]>&); 
+void display(map<string, list<string>[T_COUNT]>);\
+void trade(map<string, list<string>[T_COUNT]>&);
 
-//main function begins here
-    // declare a map with a country as the key and the values are an array of 3 lists, imports, exports and 
-    // domestically sold products
     int main() 
     {
-        //basic map
-        // initilize by not readin file but by placing our own values
-        map <string, int>Map;  
-        Map["Peru"] = 15;
-        Map["Mexico"] = 10; 
+        map<string, list<string>[T_COUNT]> countryData;  
 
-
-    //open the file and include an error message if it fails to open
-
-    //read country names and some list of items that are traded into the map, and the items into the lists
-
-    // close the file
-
-    //Im using a second file of items, that are not included in the original file 
-    //open the file and copy the elements into an array
-
-    //run a simulation 25 times and go through every country 
-        // call the function we declared earlier
-        for(auto e : Map)
-        {
-            int val = e.second; 
-            change(val); 
-        }
-        //test loop to iterate thorough the small map we have and call the function for every value in the 
-        // map 
-        //in the fucntion we run the probability of what new item they either import, exported, or sold 
-        // domestically
-        // the item is chosen at random and addded to the appropriate list 
-
-    // return 0 to end the main function
+    populate(countryData);    
+    cout<<endl; 
+    display(countryData); 
+    cout<<endl; 
+    trade(countryData); 
+    cout<<endl; 
+    display(countryData); 
+        
     return 0; 
     }
 
-// the function is written out here
-
-    // use a for loop to run through the suimulation 25 times
-        //use srand time to keep getting a new int 
-        //set up probability of an event happening, based on that determine whether a new import 
-        // export or domestic product has been added
-        // set up a rare case where all exports cease for a certain country due to 
-        //shortages and the list of exports get 
-        // added to the domestic products sold only 
-    // dummy parameters go into teh function to make sure the functin call works
-void change(int a)
+void populate(map<string, list<string>[T_COUNT]>& countdt)
 {
-    cout<<endl; 
-    cout<<a<<endl; 
+        ifstream input1("countries.txt"); 
+        ifstream input2("products1.txt");
+        string country; 
+        string product; 
+
+     
+        for(int i = 0; i < 3; i++)
+        {
+            while(getline(input1, country))
+            {
+                countdt[country]; 
+            }
+        }
+        input1.close(); 
+
+       for(auto e : countdt)
+       {
+           
+           for(int j = 0; j < 3; j++)
+             { 
+                for(int k = 0; k < NUM_COUNT; k++)
+                {
+                getline(input2, product);
+                countdt[e.first][j].push_back(product);   
+                } 
+            }
+
+       }
+        input2.close(); 
+}
+void display(map<string, list<string>[T_COUNT]> cdmap)
+{
+    for(auto e : cdmap)
+    {
+        cout<<e.first<<endl; 
+        
+        cout<<"\tImports:"<<endl;
+        cout<<"\t"; 
+        for(string import : e.second[0])
+        {
+            cout<<import<<"   "; 
+        }
+        cout<<endl; 
+
+        cout<<"\tExports:"<<endl;
+        cout<<"\t"; 
+        for(string exp : e.second[1])
+        {
+            cout<<exp<<"   "; 
+        }
+        cout<<endl;
+        
+        cout<<"\tDomestic Products:"<<endl;
+        cout<<"\t";  
+        for(string dom : e.second[2])
+        {
+            cout<<dom<<"   "; 
+        }
+        cout<<endl; 
+    }
+}
+
+void trade(map<string, list<string>[T_COUNT]>& counttrad)
+{
+    vector<string>newprod; 
+
+    fstream input3("products2.txt");
+    string newp; 
+    while(input3>>newp)
+    {
+        newprod.push_back(newp); 
+    }
+    input3.close(); 
+
+    int size = newprod.size(); 
+
+    for(int i = 0; i < size; i++)
+    {
+        cout<<newprod[i]<<" "; 
+    }
+
+    srand(time(0)); 
+
+    for (auto e : counttrad) 
+    {
+       int prob = rand() % 100 + 1;
+        if (prob <= 20)
+        {
+            e.second[0].pop_back(); 
+
+        } 
+        prob = rand() % 100 + 1;
+        if (prob <= 30)
+        {
+            e.second[1].pop_back(); 
+
+        } 
+        prob = rand() % 100 + 1;
+        if (prob <= 40)
+        {
+            e.second[2].pop_back();
+        } 
+        prob = rand() % 100 + 1;
+        int newp = rand() % size + 1; 
+        if(prob <= 50)
+        {
+            
+            e.second[0].push_back(newprod[newp]); 
+        }
+         prob = rand() % 100 + 1;
+         
+        if(prob <= 60)
+        {
+            
+            e.second[1].push_back(newprod[newp]); 
+        }
+        prob = rand() % 100 + 1;
+        if(prob <= 70)
+        {
+             
+            e.second[2].push_back(newprod[newp]); 
+        }
+        prob = rand() % 100 + 1;
+        if(prob >= 90 || prob <= 92)
+        {
+           vector<string>temp; 
+            for(string t: e.second[0])
+            {
+                temp.push_back(t); 
+            }
+            e.second[0].clear(); 
+            for(int i = 0; i < temp.size(); i++)
+            {
+                e.second[2].push_back(temp[i]);
+            }
+        }
+
+    }
+    
 }
