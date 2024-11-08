@@ -131,8 +131,29 @@ void trade(map<string, list<string>[T_COUNT]>& counttrad)
             int newp = rand() % newprod.size() + 1; 
             e.second[0].push_back(newprod[newp]); 
         }
-        
-  
+         prob = rand() % 100 + 1;
+        if(prob <= 60)
+        {
+            int newp = rand() % newprod.size() + 1; 
+            e.second[1].push_back(newprod[newp]); 
+        }
+        prob = rand() % 100 + 1;
+        if(prob <= 70)
+        {
+            int newp = rand() % newprod.size() + 1; 
+            e.second[2].push_back(newprod[newp]); 
+        }
+        prob = rand() % 100 + 1;
+        if(prob >= 90 || prob <= 92)
+        {
+           vector<string>temp; 
+            for(string t: e.second[0])
+            {
+                temp.push_back(t); 
+            }
+            e.second[0].clear(); 
+        }
+
         display(counttrad); 
     }
     
