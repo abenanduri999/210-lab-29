@@ -125,22 +125,26 @@ void trade(map<string, list<string>[T_COUNT]>& counttrad)
     for (auto e : counttrad) 
     {
        int prob = rand() % 100 + 1;
-       /* if (prob < 20)
+        if (prob <= 20)
         {
-            int n = rand() % e.second[0].size() + 1;
-            cout<<n<<endl; 
-            auto it = e.second[0].begin(); 
-            advance(it, 2); 
-            e.second[0].remove(*it);
+            counttrad[0][0].pop_back(); 
 
-        } */
-        auto it =  counttrad[0][0].begin(); 
-        advance(it, 2); 
-        counttrad[0][0].remove(*it); 
-      // counttrad[e.first][0].pop_back(); 
-       //counttrad[e.first][1].pop_back();
-       //counttrad[e.first][2].pop_back();
-    }    
-    display(counttrad); 
+        } 
+        prob = rand() % 100 + 1;
+        if (prob <= 30)
+        {
+            counttrad[0][1].pop_back(); 
+
+        } 
+        prob = rand() % 100 + 1;
+        if (prob <= 40)
+        {
+            counttrad[0][2].pop_back(); 
+
+        } 
+        
+  
+        display(counttrad); 
+    }
     
 }
