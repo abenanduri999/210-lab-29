@@ -29,7 +29,31 @@ const int NUM_COUNT = 10;
                 countryData[country]; 
             }
         }
+        
 
+       for(auto e : countryData)
+       {
+           
+           for(int j = 0; j < 3; j++)
+             { 
+                getline(input2, product);
+                countryData[e.first][j].push_back(product);    
+            }
+
+       }
+
+    for(auto e : countryData)
+    {
+        cout<<e.first<<endl; 
+        cout<<"\tImports:"<<endl; 
+
+        for(string import : e.second[0])
+        {
+            cout<<"\t"<<import<<endl; 
+        }
+
+        cout<<"\tExports:"
+    }
        
 
 
