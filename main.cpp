@@ -114,3 +114,14 @@ void display(map<string, list<string>[T_COUNT]> cdmap)
         cout<<endl; 
     }
 }
+
+void trade(map<string, list<string>[T_COUNT]>& counttrad)
+{
+    srand(time(0)); 
+
+    for (auto e : counttrad) 
+    {
+        int prob = rand() % 100 + 1;
+        if (prob <= ) 
+    }    
+}
