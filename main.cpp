@@ -22,7 +22,14 @@ using namespace std;
         
         // initilize by not readin file but by placing our own values
         map<string, list<string>[]> countryData;  
-        
+        ifstream input1("countries.txt"); 
+        string country; 
+
+     
+        for(int i = 0; i < 2; i++)
+        {
+            while(input1 >> countryData[++i])
+        }
 
 
 
