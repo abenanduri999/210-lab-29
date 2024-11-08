@@ -1,4 +1,4 @@
-// include all the headers to be used, map, list, array, iostream, fstream 
+
 #include<iostream>
 #include<map>
 #include<list>
@@ -10,37 +10,14 @@
 using namespace std;
 const int NUM_COUNT = 10;
 
+void populate(map<string, list<string>[3]>&); 
 void display(map<string, list<string>[3]>);
 
     int main() 
     {
         map<string, list<string>[3]> countryData;  
-        ifstream input1("countries.txt"); 
-        ifstream input2("products1.txt");
-        string country; 
-        string product; 
 
-     
-        for(int i = 0; i < 3; i++)
-        {
-            while(getline(input1, country))
-            {
-                countryData[country]; 
-            }
-        }
-        input1.close(); 
-
-       for(auto e : countryData)
-       {
-           
-           for(int j = 0; j < 3; j++)
-             { 
-                getline(input2, product);
-                countryData[e.first][j].push_back(product);    
-            }
-
-       }
-        input2.close(); 
+    populate(countryData);    
     cout<<endl; 
     display(countryData); 
        
@@ -72,7 +49,35 @@ void display(map<string, list<string>[3]>);
         //shortages and the list of exports get 
         // added to the domestic products sold only 
     // dummy parameters go into teh function to make sure the functin call works
+void populate(map<string, list<string>[3]>& countdt)
+{
+     ifstream input1("countries.txt"); 
+        ifstream input2("products1.txt");
+        string country; 
+        string product; 
 
+     
+        for(int i = 0; i < 3; i++)
+        {
+            while(getline(input1, country))
+            {
+                countdt[country]; 
+            }
+        }
+        input1.close(); 
+
+       for(auto e : countdt)
+       {
+           
+           for(int j = 0; j < 3; j++)
+             { 
+                getline(input2, product);
+                countdt[e.first][j].push_back(product);    
+            }
+
+       }
+        input2.close(); 
+}
 void display(map<string, list<string>[3]> cdmap)
 {
     for(auto e : cdmap)
