@@ -9,23 +9,15 @@
 
 using namespace std;
 const int NUM_COUNT = 10;
-//include the other as well
 
-// function declration to be called when handling time based events of what is being imported, 
-// exported and what is being produced and sold domestically
-//void change(int); 
-
-//main function begins here
-    // declare a map with a country as the key and the values are an array of 3 lists, imports, exports and 
-    // domestically sold products
     int main() 
     {
 
         
         // initilize by not readin file but by placing our own values
-        map<string, list<string>[]> countryData;  
+        map<string, list<string>[3]> countryData;  
         ifstream input1("countries.txt"); 
-        ifstream input2("products1");
+        ifstream input2("products1.txt");
         string country; 
         string product; 
 
@@ -38,10 +30,7 @@ const int NUM_COUNT = 10;
             }
         }
 
-        for(auto e : countryData)
-        {
-            cout<<e.first<<endl; 
-        }
+       
 
 
     //open the file and include an error message if it fails to open
