@@ -8,7 +8,7 @@
 
 
 using namespace std;
-const int NUM_COUNT = 10;
+const int NUM_COUNT = 5;
 
 void populate(map<string, list<string>[3]>&); 
 void display(map<string, list<string>[3]>);
@@ -71,8 +71,11 @@ void populate(map<string, list<string>[3]>& countdt)
            
            for(int j = 0; j < 3; j++)
              { 
+                for(int k = 0; k < NUM_COUNT; k++)
+                {
                 getline(input2, product);
-                countdt[e.first][j].push_back(product);    
+                countdt[e.first][j].push_back(product);   
+                } 
             }
 
        }
@@ -85,23 +88,26 @@ void display(map<string, list<string>[3]> cdmap)
         cout<<e.first<<endl; 
         
         cout<<"\tImports:"<<endl;
+        cout<<"\t"; 
         for(string import : e.second[0])
         {
-            cout<<"\t\t"<<import<<" "; 
+            cout<<import<<"   "; 
         }
         cout<<endl; 
 
         cout<<"\tExports:"<<endl;
+        cout<<"\t"; 
         for(string exp : e.second[1])
         {
-            cout<<"\t\t"<<exp<<" "; 
+            cout<<exp<<"   "; 
         }
         cout<<endl;
         
-        cout<<"\tDomestic Products:"<<endl; 
+        cout<<"\tDomestic Products:"<<endl;
+        cout<<"\t";  
         for(string dom : e.second[2])
         {
-            cout<<"\t\t"<<dom<<" "; 
+            cout<<dom<<"   "; 
         }
         cout<<endl; 
     }
