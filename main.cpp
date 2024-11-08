@@ -10,11 +10,10 @@
 using namespace std;
 const int NUM_COUNT = 10;
 
+void display(map<string, list<string>[3]>);
+
     int main() 
     {
-
-        
-        // initilize by not readin file but by placing our own values
         map<string, list<string>[3]> countryData;  
         ifstream input1("countries.txt"); 
         ifstream input2("products1.txt");
@@ -29,7 +28,7 @@ const int NUM_COUNT = 10;
                 countryData[country]; 
             }
         }
-        
+        input1.close(); 
 
        for(auto e : countryData)
        {
@@ -41,44 +40,14 @@ const int NUM_COUNT = 10;
             }
 
        }
-
+        input2.close(); 
     cout<<endl; 
-    for(auto e : countryData)
-    {
-        cout<<e.first<<endl; 
-        
-        cout<<"\tImports:"<<endl;
-        for(string import : e.second[0])
-        {
-            cout<<"\t\t"<<import<<" "; 
-        }
-        cout<<endl; 
-
-        cout<<"\tExports:"<<endl;
-        for(string exp : e.second[1])
-        {
-            cout<<"\t\t"<<exp<<" "; 
-        }
-        cout<<endl;
-        
-        cout<<"\tDomestic Products:"<<endl; 
-        for(string dom : e.second[2])
-        {
-            cout<<"\t\t"<<dom<<" "; 
-        }
-        cout<<endl; 
-    }
+    display(countryData); 
        
 
 
     //open the file and include an error message if it fails to open
 
-    //read country names and some list of items that are traded into the map, and the items into the lists
-
-    // close the file
-
-    //Im using a second file of items, that are not included in the original file 
-    //open the file and copy the elements into an array
 
     //run a simulation 25 times and go through every country 
         // call the function we declared earlier
@@ -103,3 +72,32 @@ const int NUM_COUNT = 10;
         //shortages and the list of exports get 
         // added to the domestic products sold only 
     // dummy parameters go into teh function to make sure the functin call works
+
+void display(map<string, list<string>[3]> cdmap)
+{
+    for(auto e : cdmap)
+    {
+        cout<<e.first<<endl; 
+        
+        cout<<"\tImports:"<<endl;
+        for(string import : e.second[0])
+        {
+            cout<<"\t\t"<<import<<" "; 
+        }
+        cout<<endl; 
+
+        cout<<"\tExports:"<<endl;
+        for(string exp : e.second[1])
+        {
+            cout<<"\t\t"<<exp<<" "; 
+        }
+        cout<<endl;
+        
+        cout<<"\tDomestic Products:"<<endl; 
+        for(string dom : e.second[2])
+        {
+            cout<<"\t\t"<<dom<<" "; 
+        }
+        cout<<endl; 
+    }
+}
