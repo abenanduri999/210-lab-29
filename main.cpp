@@ -42,29 +42,31 @@ const int NUM_COUNT = 10;
 
        }
 
+    cout<<endl; 
     for(auto e : countryData)
     {
         cout<<e.first<<endl; 
-        cout<<"\tImports:"<<endl; 
-
+        
+        cout<<"\tImports:"<<endl;
         for(string import : e.second[0])
         {
-            cout<<"\t"<<import<<endl; 
+            cout<<"\t\t"<<import<<" "; 
         }
+        cout<<endl; 
 
-        cout<<"\tExports:"<<endl; 
-
-        for(string export : e.second[1])
+        cout<<"\tExports:"<<endl;
+        for(string exp : e.second[1])
         {
-            cout<<"\t"<<export<<endl; 
+            cout<<"\t\t"<<exp<<" "; 
         }
-
-        cout<<"\tDomestic Products:"<<endl; 
+        cout<<endl;
         
+        cout<<"\tDomestic Products:"<<endl; 
         for(string dom : e.second[2])
         {
-            cout<<"\t"<<dom<<endl; 
+            cout<<"\t\t"<<dom<<" "; 
         }
+        cout<<endl; 
     }
        
 
